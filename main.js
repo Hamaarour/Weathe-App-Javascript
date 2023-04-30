@@ -1,5 +1,5 @@
 const container = document.querySelector('.container');
-const search = document.querySelector('.search-box');
+const search = document.querySelector('.search-box button');
 const weatherBox = document.querySelector('.weather-box');
 const weatherDetails = document.querySelector('.weather-details');
 const error404 = document.querySelector('.not-found');
@@ -8,8 +8,7 @@ search.addEventListener('click', () => {
     const APIkey = '1f9e0fb46e5bec1fa5c04b8156fb9808';
     const city = document.querySelector('.search-box input').value;
      if (city === '') {
-        return
-    //     alert('Please enter a city name');
+        alert('Please enter a city name');
     }
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIkey}`)
         .then(response => response.json())
@@ -27,10 +26,10 @@ search.addEventListener('click', () => {
             const image = document.querySelector('.weather-box img');
             const temperature = document.querySelector('.weather-box .temperature');
             const description = document.querySelector('.weather-box .description');
-            const humidity = document.querySelector('.weather-details .humudity');
-            const wind = document.querySelector('.weather-details .wind');
+            const humidity = document.querySelector('.weather-details .humudity span');
+            const wind = document.querySelector('.weather-details .wind span');
             switch(json.weather[0].main) {
-                case 'clear':
+                case 'Clear':
                     image.src = 'images/clear.png';
                     break;
                 case 'Clouds':
