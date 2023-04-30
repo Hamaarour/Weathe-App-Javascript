@@ -2,7 +2,197 @@
     margin: 0;
     padding: 0;
     border: 0;
+    outline: none;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    /* outline: red solid 1px; */
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #301934;
+}
+/* container style  start */
+.container {
+   position: relative;
+   width: 400px;
+   height: 105px;
+   background-color: #fff;
+   padding: 28px 32px;
+   overflow: hidden;
+   border-radius: 18px;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    -ms-border-radius: 18px;
+    -o-border-radius: 18px;
+   transition: 0.6s ease-out;
+    -webkit-transition: 0.6s ease-out;
+    -moz-transition: 0.6s ease-out;
+    -ms-transition: 0.6s ease-out;
+    -o-transition: 0.6s ease-out;
+   font-family: 'Roboto', sans-serif;
+}
+/* container style  end */
+
+/* search-box style  start */
+.container .search-box {
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container .search-box input {
+    color: #301934;
+    width: 80%;
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-left: 32px;
+}
+.container .search-box input::placeholder {
+    color: #301934;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.container .search-box button{
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    color: #301934;
+    background: #CBC3E3;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    font-size: 22px;
+    transition: 0.4s ease-out;
+    -webkit-transition: 0.4s ease-out;
+    -moz-transition: 0.4s ease-out;
+    -ms-transition: 0.4s ease-out;
+    -o-transition: 0.4s ease-out;
+}
+.container .search-box button:hover{
+    background: #301934;
+    color: #CBC3E3;
+}
+.container .search-box i{
+    position: absolute;
+    font-size: 28px;
+    color: #301934;
+}
+/* search-box style  end */
+/* weather-box style  start */
+.container .weather-box {
+    text-align: center;
+}
+.container .weather-box img{
+    width: 60%;
+    margin-top: 30px;
+}
+.container .weather-box .temperature{
+    position: relative;
+    color: #301934;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-top: 30px;
+    margin-left: -16px;
+}
+.container .weather-box .temperature span {
+    position: absolute;
+    margin-left: 4px;
+    font-size: 1.5rem;
+}
+
+.container .weather-box .description{
+    color: #301934;
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+/* weather-box style  end */
+/* weather-details style  start */
+.container .weather-details{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.container .weather-details .humudity,
+.container .weather-details .wind{
+    display: flex;
+    width: 50%;
+    height: 100px;
+    align-items: center;
 
 }
+.container .weather-details .humudity{
+    padding-left: 20px;
+    justify-content: flex-start;
+}
+.container .weather-details .wind{
+    padding-right: 20px;
+    justify-content: flex-end;
+}
+.container .weather-details i{
+    color: #301934;
+    font-size: 26px;
+    margin-right: 10px;
+    margin-left: 6px;
+}
+.container .weather-details span{
+    color: #301934;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.container .weather-details p{
+    color: #301934;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+/* weather-details style  end */
+/* not-found style  start */
+.container .not-found{
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    scale: 0;
+    opacity: 0;
+    display: none;
+}
+.container .not-found img{
+    width: 70%;
+}
+.container .not-found p{
+    color: #301934;
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-top: 12px;
+}
+.weather-box , .weather-details{
+    scale: 0;
+    opacity: 0;
+}
+/*+ fade-in */
+
+.fade-in{
+    animation: 0.5s fadeIn forwards;
+    -webkit-animation: 0.5s fadeIn forwards;
+    animation-delay: 0.5s;
+}
+@keyframes fadeIn{
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+/* not-found style  end */
